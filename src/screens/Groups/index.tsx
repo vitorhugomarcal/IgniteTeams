@@ -26,10 +26,10 @@ export default function Groups() {
 
       const data = await groupsGetAll()
       setGroups(data)
-      
-      setIsLoading(false)
     } catch (error) {
       Alert.alert('Turmas', 'Não foi possivel carregar as turmas.')
+    } finally {
+      setIsLoading(false)
     }
   }
 
