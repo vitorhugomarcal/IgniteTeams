@@ -1,3 +1,8 @@
+import { useEffect, useRef, useState } from "react";
+import { Alert, FlatList, TextInput } from "react-native";
+import { Container, Form, HeaderList, NumberOfPlayers } from "./styles";
+import { useNavigation, useRoute } from "@react-navigation/native";
+
 import { Button } from "@components/Button";
 import { ButtonIcon } from "@components/ButtonIcon";
 import { Filter } from "@components/Filter";
@@ -7,16 +12,14 @@ import { Input } from "@components/Input";
 import { ListEmpty } from "@components/ListEmpty";
 import { Loading } from "@components/Loading";
 import { PlayerCard } from "@components/PlayerCard";
-import { useNavigation, useRoute } from "@react-navigation/native";
+
 import { groupRemoveByNmae } from "@storage/group/groupRemoveByName";
 import { playerAddByGroup } from "@storage/player/playerAddByGroup";
 import { playersGetByGroupAndTeam } from "@storage/player/playerGetByGroupAndTeam";
 import { playerRemoveByGroup } from "@storage/player/playerRemoveByGroup";
 import { PlayerStorageDTO } from "@storage/player/PlayerStorageDTO";
+
 import { AppError } from "@utils/AppError";
-import { useEffect, useRef, useState } from "react";
-import { Alert, FlatList, TextInput } from "react-native";
-import { Container, Form, HeaderList, NumberOfPlayers } from "./styles";
 
 interface RouteParams {
   group: string;
